@@ -6,3 +6,4 @@
 /.vs
 /AzureKeyVaultAspNetCoreApp/.vs/AzureKeyVaultAspNetCoreApp
 /AzureKeyVaultAspNetCoreApp/obj
+/AzureKeyVaultAspNetCoreApp/bin/Release/netcoreapp3.1

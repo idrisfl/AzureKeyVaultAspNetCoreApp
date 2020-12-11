@@ -4,10 +4,7 @@ using AzureKeyVaultAspNetCoreApp.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using System;
-using System.Collections.Generic;
 using System.Diagnostics;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace AzureKeyVaultAspNetCoreApp.Controllers
 {
@@ -27,7 +24,7 @@ namespace AzureKeyVaultAspNetCoreApp.Controllers
                 string keyVaultUri = "https://my-key-vault-20201211.vault.azure.net/";
                 SecretClient client = new SecretClient(new Uri(keyVaultUri), new DefaultAzureCredential());
 
-                string secret = client.GetSecretAsync("secretColour", "3da1dc6d45ca4777b7a212921aed0d88").Result.Value.Value;
+                string secret = client.GetSecretAsync("secretColour", "399f89c628754fb59e7bc0a9790a304a").Result.Value.Value;
                 ViewBag.secretColour = secret;
 
             }
