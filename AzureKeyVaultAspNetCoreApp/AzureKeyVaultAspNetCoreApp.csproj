@@ -2,12 +2,13 @@
 
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
+    <UserSecretsId>8d89c7fd-f709-4a30-889c-6fe515e18c42</UserSecretsId>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Azure.Identity" Version="1.4.0-beta.1" />
-    <PackageReference Include="Azure.Security.KeyVault.Keys" Version="4.2.0-beta.3" />
-    <PackageReference Include="Azure.Security.KeyVault.Secrets" Version="4.2.0-beta.3" />
+    <PackageReference Include="Azure.Identity" Version="1.4.0-beta.5" />
+    <PackageReference Include="Azure.Security.KeyVault.Keys" Version="4.2.0-beta.5" />
+    <PackageReference Include="Azure.Security.KeyVault.Secrets" Version="4.2.0-beta.4" />
   </ItemGroup>
 
 </Project>

@@ -5,6 +5,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using System;
 using System.Diagnostics;
+using Azure.Security.KeyVault.Keys;
 
 namespace AzureKeyVaultAspNetCoreApp.Controllers
 {
@@ -21,11 +22,15 @@ namespace AzureKeyVaultAspNetCoreApp.Controllers
         {
             try
             {
-                string keyVaultUri = "https://my-key-vault-20201211.vault.azure.net/";
+                string keyVaultUri = "https://my-key-vault-20210420.vault.azure.net/";
                 SecretClient client = new SecretClient(new Uri(keyVaultUri), new DefaultAzureCredential());
 
-                string secret = client.GetSecretAsync("secretColour", "399f89c628754fb59e7bc0a9790a304a").Result.Value.Value;
+                string secret = client.GetSecretAsync("secretColour").Result.Value.Value;
                 ViewBag.secretColour = secret;
+
+                KeyClient keyClient = new KeyClient(new Uri(keyVaultUri), new DefaultAzureCredential());
+                var key = keyClient.GetKeyAsync("myKey").Result.Value.Key;
+                ViewBag.myKey = key;
 
             }
             catch (Exception ex)
